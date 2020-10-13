@@ -27,29 +27,6 @@
 
 namespace Microsoft.IdentityModel.Protocols.WsTrust
 {
-    ///// <summary>
-    ///// Abstract class for singleton pattern for multipule WsTrust versions for Actions.
-    ///// </summary>
-    ///// <typeparam name="T"></typeparam>
-    //public abstract class WsTrustActions<T> : WsTrustActions where T : new()
-    //{
-    //    private T _instance;
-
-    //    /// <summary>
-    //    /// Implements singleton pattern.
-    //    /// </summary>
-    //    public T Instance
-    //    {
-    //        get
-    //        {
-    //            if (_instance == null)
-    //                _instance = new T();
-
-    //            return _instance;
-    //        }
-    //    }
-    //}
-
     /// <summary>
     /// Values for Actions for WsTrust Feb2005, 1.3 and 1.4.
     /// </summary>

@@ -29,7 +29,7 @@
 
 namespace Microsoft.IdentityModel.XmlEnc
 {
-    public class EncryptedData
+    internal class EncryptedData
     {
         public EncryptedData()
         {

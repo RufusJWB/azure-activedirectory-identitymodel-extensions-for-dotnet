@@ -41,9 +41,9 @@ namespace Microsoft.IdentityModel.Protocols.WsSecurity
     /// see: https://www.oasis-open.org/committees/download.php/16790/wss-v1.1-spec-os-SOAPMessageSecurity.pdf (1.1)
     /// see: http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-SOAPMessageSecurity-v1.1.1-os.html (1.1.1)
     /// </summary>
-    public static class WsSecuritySerializer
+    public class WsSecuritySerializer
     {
-        public static XmlElement GetXmlElement(SecurityTokenReference securityTokenReference)
+        public virtual XmlElement GetXmlElement(SecurityTokenReference securityTokenReference)
         {
             if (securityTokenReference == null)
                 throw LogHelper.LogArgumentNullException(nameof(securityTokenReference));
@@ -52,7 +52,7 @@ namespace Microsoft.IdentityModel.Protocols.WsSecurity
             {
                 using (var writer = XmlDictionaryWriter.CreateTextWriter(stream, Encoding.UTF8, false))
                 {
-                    WsSecuritySerializer.WriteSecurityTokenReference(writer, securityTokenReference);
+                    WriteSecurityTokenReference(writer, securityTokenReference);
                     writer.Flush();
                     stream.Seek(0, SeekOrigin.Begin);
                     var dom = new XmlDocument

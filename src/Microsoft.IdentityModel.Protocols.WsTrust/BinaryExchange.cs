@@ -35,7 +35,7 @@ namespace Microsoft.IdentityModel.Protocols.WsTrust
     /// Represents the contents of the BinaryExchange element.
     /// see: http://docs.oasis-open.org/ws-sx/ws-trust/200512/ws-trust-1.3-os.html
     /// </summary>
-    public class BinaryExchange
+    internal class BinaryExchange
     {
         private byte[] _binaryData;
 

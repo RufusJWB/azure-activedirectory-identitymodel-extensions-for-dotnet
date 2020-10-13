@@ -29,7 +29,7 @@
 
 namespace Microsoft.IdentityModel.Protocols
 {
-    public abstract class XmlEncryptionDataTypes
+    internal abstract class XmlEncryptionDataTypes
     {
         public static XmlEncryption11DataTypes XmlEnc11 { get; } = new XmlEncryption11DataTypes();
 
@@ -40,7 +40,7 @@ namespace Microsoft.IdentityModel.Protocols
         public string Element { get; protected set; }
     }
 
-    public class XmlEncryption11DataTypes : XmlEncryptionDataTypes
+    internal class XmlEncryption11DataTypes : XmlEncryptionDataTypes
     {
 
         public XmlEncryption11DataTypes()

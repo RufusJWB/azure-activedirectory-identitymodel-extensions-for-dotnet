@@ -32,7 +32,7 @@ namespace Microsoft.IdentityModel.Protocols.WsAddressing
     /// <summary>
     /// Classes for specifying WS-Addressing, 1.0 and 200408.
     /// </summary>
-    internal abstract class WsAddressingVersion
+    public abstract class WsAddressingVersion
     {
         public static WsAddressingVersion Addressing10 = new WsAddressing10Version();
 
@@ -42,10 +42,10 @@ namespace Microsoft.IdentityModel.Protocols.WsAddressing
     /// <summary>
     /// Class for specifying WS-Addressing 10.
     /// </summary>
-    internal class WsAddressing10Version : WsAddressingVersion { }
+    public class WsAddressing10Version : WsAddressingVersion { }
 
     /// <summary>
     /// Class for specifying WS-Addressing 200408.
     /// </summary>
-    internal class WsAddressing200408Version : WsAddressingVersion { }
+    public class WsAddressing200408Version : WsAddressingVersion { }
 }

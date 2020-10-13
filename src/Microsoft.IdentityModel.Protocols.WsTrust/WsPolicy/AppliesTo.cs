@@ -25,6 +25,7 @@
 //
 //------------------------------------------------------------------------------
 
+using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Protocols.WsAddressing;
 
 #pragma warning disable 1591
@@ -33,10 +34,15 @@ namespace Microsoft.IdentityModel.Protocols.WsPolicy
 {
     public class AppliesTo
     {
-        public AppliesTo()
+        internal AppliesTo()
         {
         }
 
-        public EndpointReference EndpointReference { get; set; }
+        public AppliesTo(EndpointReference endpointReference)
+        {
+            EndpointReference = endpointReference ?? throw LogHelper.LogArgumentNullException(nameof(endpointReference));
+        }
+
+        public EndpointReference EndpointReference { get; }
     }
 }

@@ -52,10 +52,6 @@ namespace Microsoft.IdentityModel.Protocols.WsPolicy
         /// <returns>An <see cref="EndpointReference"/> instance.</returns>
         public virtual AppliesTo ReadAppliesTo(XmlDictionaryReader reader, string @namespace)
         {
-            //  if this clas becomes public, we will need to check parameters
-            //  XmlUtil.CheckReaderOnEntry(reader, WsPolicyElements.AppliesTo, @namespace);
-
-            // brentsch - TODO, TESTCASE
             if (reader.IsEmptyElement)
             {
                 reader.Skip();
@@ -63,7 +59,7 @@ namespace Microsoft.IdentityModel.Protocols.WsPolicy
             }
 
             reader.ReadStartElement();
-            var appliesTo = new AppliesTo { EndpointReference = _wsAddressingSerializer.ReadEndpointReference(reader) };
+            var appliesTo = new AppliesTo(_wsAddressingSerializer.ReadEndpointReference(reader));
             reader.ReadEndElement();
 
             return appliesTo;
